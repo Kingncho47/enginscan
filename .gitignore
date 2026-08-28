@@ -54,3 +54,6 @@ key.properties
 *.apk
 *.aab
 .vscode/
+
+# Sauvegarde chiffree keystore - NE JAMAIS PUBLIER
+*.tar.enc
