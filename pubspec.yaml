@@ -1,0 +1,39 @@
+name: enginscan
+description: >-
+  EnginScan - Diagnostic terrain SAE J1939 pour engins de chantier et de
+  manutention : lecture CAN temps reel via boitier Bluetooth (ELM327 / OBDLink /
+  STN), codes defauts actifs (DM1), live data moteur/hydraulique, base de
+  connaissances DTC hors-ligne et checklist pre-shift.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Communication serie Bluetooth Classic (SPP) vers le boitier diagnostic.
+  # Un ELM327 v1.4+/v1.5 ou OBDLink (STN) branche sur Deutsch 9 broches est requis.
+  flutter_bluetooth_serial: ^0.4.0
+
+  # Gestion d'etat legere : services + ChangeNotifier exposes via Provider.
+  provider: ^6.1.2
+
+  # Persistance locale 100% offline (fiches DTC pre-remplies, sessions, checklists).
+  sqflite: ^2.3.3
+  path: ^1.9.0
+
+  # Autorisations runtime Android 12+ (BLUETOOTH_SCAN / BLUETOOTH_CONNECT).
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
