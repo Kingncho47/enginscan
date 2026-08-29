@@ -15,6 +15,7 @@ la prise Deutsch Y (9 broches) ou un adaptateur OBD2/CAN.
 | Base DTC offline | Recherche instantanée par code (`110-3`), SPN, marque ou mot-clé ; fiche : description, causes probables, procédure d'intervention étape par étape |
 | Checklist pré-shift | Contrôle visuel/fonctionnel avant mise en service, points critiques bloquants, observations par point, historique local |
 | Console terrain | Terminal AT/ST libre (`ATRV`, `STI`…) + journal des trames HEX |
+| Tests rapides | 3 tests moteur auto (régime, variation, injecteurs), contrôle manuel ±100 RPM, arrêt d'urgence — commandes propriétaires OEM configurables |
 
 ## Arborescence
 
@@ -41,7 +42,11 @@ lib/
         │       └── spn_formulas.dart              # formules de conversion SPN
         ├── diagnostics/presentation/      # LiveDiagnosticScreen + widgets
         ├── knowledge/                     # recherche DTC + dépôt SQL
-        └── checklist/                     # pré-shift (modèles, dépôt, écran)
+        ├── checklist/                     # pré-shift (modèles, dépôt, écran)
+        └── quick_tests/                   # tests rapides moteur
+            ├── domain/test_sequence.dart  # modèles TestStep/TestSequence/DefaultTests
+            ├── data/simple_test_runner.dart # exécuteur (ChangeNotifier)
+            └── presentation/quick_commands_screen.dart # UI commandes rapides
 ```
 
 ## Installation

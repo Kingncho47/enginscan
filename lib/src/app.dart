@@ -4,6 +4,7 @@ import 'core/theme/app_theme.dart';
 import 'features/checklist/presentation/pre_shift_checklist_screen.dart';
 import 'features/diagnostics/presentation/live_diagnostic_screen.dart';
 import 'features/knowledge/presentation/knowledge_search_screen.dart';
+import 'features/quick_tests/presentation/quick_commands_screen.dart';
 
 /// Racine applicative : Material Design 3, theme sombre par defaut pour une
 /// lisibilite maximale en exterieur (fort contraste, gros elements tactiles).
@@ -36,10 +37,13 @@ class _HomeShell extends StatefulWidget {
 class _HomeShellState extends State<_HomeShell> {
   int _index = 0;
 
-  static const List<Widget> _screens = <Widget>[
-    LiveDiagnosticScreen(),
-    KnowledgeSearchScreen(),
-    PreShiftChecklistScreen(),
+  late final List<Widget> _screens = <Widget>[
+    const LiveDiagnosticScreen(),
+    const KnowledgeSearchScreen(),
+    const PreShiftChecklistScreen(),
+    QuickCommandsScreen(
+      onOpenDiagnostic: () => setState(() => _index = 0),
+    ),
   ];
 
   @override
@@ -65,6 +69,11 @@ class _HomeShellState extends State<_HomeShell> {
             icon: Icon(Icons.checklist_outlined),
             selectedIcon: Icon(Icons.checklist),
             label: 'Pre-shift',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.bolt_outlined),
+            selectedIcon: Icon(Icons.bolt),
+            label: 'Tests rapides',
           ),
         ],
       ),

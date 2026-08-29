@@ -8,6 +8,7 @@ import 'src/features/checklist/data/checklist_repository.dart';
 import 'src/features/j1939/data/elm327_link.dart';
 import 'src/features/j1939/data/j1939_bluetooth_service.dart';
 import 'src/features/knowledge/data/dtc_repository.dart';
+import 'src/features/quick_tests/data/simple_test_runner.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,8 @@ Future<void> main() async {
   final dtcRepository = DtcRepository(appDatabase);
   final j1939Service =
       J1939BluetoothService(link: elmLink, knowledge: dtcRepository);
+  final quickTestRunner =
+      SimpleTestRunner(link: elmLink, service: j1939Service);
 
   runApp(
     MultiProvider(
@@ -35,6 +38,9 @@ Future<void> main() async {
         ),
         ChangeNotifierProvider<J1939BluetoothService>.value(
           value: j1939Service,
+        ),
+        ChangeNotifierProvider<SimpleTestRunner>.value(
+          value: quickTestRunner,
         ),
       ],
       child: const EnginScanApp(),
