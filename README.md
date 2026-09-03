@@ -80,14 +80,22 @@ Laissez `minSdkVersion` par défaut (≥ 21) — compatible `flutter_bluetooth_s
 
 | Version | Lien | Taille | SHA-256 |
 |---|---|---|---|
-| **Release** (production) | https://files.catbox.moe/577q4k.apk | 8,3 Mo | `12345a2bc2b8234994dc32c6ec543bdede42fc3e27a382c5e56232d41aa121cc` |
-| Debug (3 ABIs) | https://files.catbox.moe/ticmn2.apk | 70 Mo | `a61e256f28ee3466f9be03c3702ec0ad175c501c97bf46032536e41dcf5b27a2` |
+| **v1.1.1** (production, nouveau logo) | [Release GitHub v1.1.1](https://github.com/Kingncho47/enginscan/releases/tag/v1.1.1) | 8,3 Mo | `023d7b3498c913973ce8acc035d69efae8506411e850afeae73e4bdd6c2e0f2b` |
+| v1.1.1 — miroir direct | (voir release GitHub) | 8,3 Mo | idem |
+| v1.0 (production) | https://files.catbox.moe/577q4k.apk | 8,3 Mo | `12345a2bc2b8234994dc32c6ec543bdede42fc3e27a382c5e56232d41aa121cc` |
+| Debug v1.0 (3 ABIs) | https://files.catbox.moe/ticmn2.apk | 70 Mo | `a61e256f28ee3466f9be03c3702ec0ad175c501c97bf46032536e41dcf5b27a2` |
 
-Copies locales : `EnginScan-v1.0-release.apk` et `EnginScan-v1.0-debug.apk`
-à la racine du projet. L'APK release est signé avec la clé de production
-(certificat `CN=EnginScan Terrain`, SHA-256 `327f7d7c…9612c4` — voir plus bas).
+Copies locales : `EnginScan-v1.1.1-release.apk`, `EnginScan-v1.0-release.apk` et
+`EnginScan-v1.0-debug.apk` à la racine du projet. L'APK release est signé avec la
+clé de production (certificat `CN=EnginScan Terrain`, SHA-256 `327f7d7c…9612c4`
+— voir plus bas) : la **v1.1.1** (versionCode 2) s'installe par-dessus la
+v1.0/v1.1 sans désinstallation.
 
-### APK debug (référence terrain)
+**v1.1.1 — nouveau logo** : icône redessinée en flat design (mécanicien africain
+avec casque de sécurité, jaune industriel `#FFCC00` sur fond anthracite).
+L'APK embarque une icône unique `mipmap-xxxhdpi` 192 px — Android la
+redimensionne pour toutes les densités (contournement de l'élagage aapt2).
+Source haute résolution : `art/icon-1024.png`.
 
 ### APK debug (référence terrain)
 
